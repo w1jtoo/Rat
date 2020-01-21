@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Compiler", "Rat-Compiler\Rat-Compiler.csproj", "{AB94A327-5C4D-497E-8D66-BE5C544018DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB94A327-5C4D-497E-8D66-BE5C544018DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB94A327-5C4D-497E-8D66-BE5C544018DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB94A327-5C4D-497E-8D66-BE5C544018DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB94A327-5C4D-497E-8D66-BE5C544018DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E96BE25C-0872-444C-8930-EAEE074A03F5}
+	EndGlobalSection
+EndGlobal
