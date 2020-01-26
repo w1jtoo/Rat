@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Compiler", "Rat-Compiler\Rat-Compiler.csproj", "{437C0F89-3D3A-4F03-AAAA-29C017F603B5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Compiler-Tests", "Rat-Compiler-Tests\Rat-Compiler-Tests.csproj", "{9CD3F6E5-7C09-4356-939D-56F377607065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Compiler", "Rat-Compiler\Rat-Compiler.csproj", "{9BA05DAB-4A50-48C9-873F-4256C9B63B38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{437C0F89-3D3A-4F03-AAAA-29C017F603B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{437C0F89-3D3A-4F03-AAAA-29C017F603B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{437C0F89-3D3A-4F03-AAAA-29C017F603B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{437C0F89-3D3A-4F03-AAAA-29C017F603B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CD3F6E5-7C09-4356-939D-56F377607065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CD3F6E5-7C09-4356-939D-56F377607065}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CD3F6E5-7C09-4356-939D-56F377607065}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CD3F6E5-7C09-4356-939D-56F377607065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA05DAB-4A50-48C9-873F-4256C9B63B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA05DAB-4A50-48C9-873F-4256C9B63B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA05DAB-4A50-48C9-873F-4256C9B63B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA05DAB-4A50-48C9-873F-4256C9B63B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
