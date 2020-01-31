@@ -2,32 +2,87 @@ grammar rat;
 /*
  * Parser Rules
  */
-SUM : TERM ADD TERM;
-SUBTRACT : TERM MINUS TERM ;
-MULTIPLY : TERM PRODUCT TERM ;
-DIVIDEOPERATION : TERM DIVIDE TERM ;
-MEMBERCALL : MEMDERCALLOPERATOR ID;
-TERM : CONST | ID | MEMBERCALL ;
-CONST : STRING | NUMBER ;
+code : (funcdef | typedef | extdef | expressions)*;
+extdef : LET EXT ID LBRACE (funcdef)*? RBRACE;
+typedef : LET TYPEKW ID LBRACE tupledef RBRACE;
+funcdef : LET functype ID funcarg*? (ARROW type)? LBRACE code RBRACE;
+expressions : expression (EXPRSEPARATOR expression)*;
+expression : expression SEMICOLON
+| expression LPARENTHESIS (expression ( COMMA expression )*)? RPARENTHESIS
+| expression zeroLevelOperator expression
+| expression firstLevelOperator expression
+| expression secondLevelOperator expression
+| expression thirdLevelOperator expression
+| expression forthLevelOpeator expression
+| LPARENTHESIS expression (COMMA expression)*? RPARENTHESIS | LPARENTHESIS COMMA RPARENTHESIS
+| LPARENTHESIS expression RPARENTHESIS
+| expression MEMDERCALLOPERATOR ID
+| expression MEMDERCALLOPERATOR ID
+| LET ID (COLON type)? SET expression
+| expression (PLUSPLUS | MINUSMINUS)
+| term ;
+zeroLevelOperator : PRODUCT | DIVIDE | AND;
+firstLevelOperator: ADD | MINUS | OR | XOR ;
+secondLevelOperator: IN | IS;
+thirdLevelOperator : EQUALS ;
+forthLevelOpeator: SET | ADDEQUALS | MINUSEQUALS | PRODUCTEQUALS| DIVIDEEQUALS | XOREQUALS | ANDEQUALS | OREQUALS;
+term : STRING | NUMBER | TRUE | FALSE | ID ;
+functype : FN | MUT | PARALLEL;
+funcarg : (MUT)? arg COLON type;
+tupledef: LPARENTHESIS arg (COMMA arg)*? RPARENTHESIS WHERE expression;
+type : (NIL | ANY | OPTIONAL) EXPRSEPARATOR type | NIL | ANY | OPTIONAL | ID | tupletype;
+tupletype : LPARENTHESIS type (COMMA type)*? RPARENTHESIS ;
+arg : ID (SET expression)? ;
 /*
  * Lexer Rules
  */
-MEMDERCALLOPERATOR : '::' ;
+WHERE : 'where' ;
+IN : 'in' ;
+IS : 'is' ;
+MUT : 'mut' ;
+FN : 'fn' ;
+PARALLEL : 'parallel' ;
+ARROW: '=>' ;
 ANY : 'Any' ;
 OPTIONAL : 'Optional' ;
 NIL : 'Nil' ;
 LET : 'let' ;
-TYPE : 'type' ;
-AND : 'and' | '&' ;
-OR : 'or' | '|' ;
+TYPEKW : 'type' ;
+EXT : 'ext' ;
+ENDEXT : 'endext' ;
+AND : 'and' ;
+ANDEQUALS : '&=' ;
+OR : 'or' ;
+OREQUALS : '|=' ;
+TRUE : 'true' ;
+FALSE : 'false' ;
+TWODOTS : '..' ;
+COLON : ':' ;
+SEMICOLON : ';';
+EXPRSEPARATOR : '&' | '|';
+ID : [A-Za-z_] [A-Za-z_0-9]* ;
+RANGE : NUMBER TWODOTS NUMBER ;
+COMMA : ',' ;
+XOREQUALS : '^=' ;
 XOR : 'xor' | '^' ;
+ADDEQUALS : '+=' ;
+PLUSPLUS : '++' ;
 ADD : '+' ;
+MINUSEQUALS : '-=' ;
+MINUSMINUS : '--' ;
 MINUS : '-' ;
+PRODUCTEQUALS : '*=' ;
 PRODUCT : '*' ;
+DIVIDEEQUALS : '/=' ;
 DIVIDE : '/' ;
-ID : [A-Za-z_] [A-Za-z_0-9] ;
+EQUALS : '==' ;
+SET : '=' ;
+LPARENTHESIS : '(' ;
+RPARENTHESIS : ')' ;
+LBRACE : '{' ;
+RBRACE : '}' ;
+MEMDERCALLOPERATOR : '::' ;
 NUMBER : ( '-' | '+' )? [0-9]+ ;
-QUOTE : '"' | '\'' ;
 NULLCHAR : '\\0' ;
 CHAR1 : '\\1' ;
 CHAR2 : '\\2' ;
@@ -60,7 +115,12 @@ CHAR28 : '\\28' ;
 CHAR29 : '\\29' ;
 CHAR30 : '\\30' ;
 CHAR31 : '\\31' ;
-ESCAPEDQUOTE : '\'' ;
-ESCAPEDDOUBLEQUOTE : '"' ;
-STRING : QUOTE ( NULLCHAR | CHAR1 | CHAR2 | CHAR3 | CHAR4 | CHAR5 | CHAR6 | CHAR7 | CHAR8 | CHAR9 | CHAR10 | CHAR11 | CHAR12 | CHAR13 | CHAR14 | CHAR15 | CHAR16 | CHAR17 | CHAR18 | CHAR19 | CHAR20 | CHAR21 | CHAR22 | CHAR23 | CHAR24 | CHAR25 | CHAR26 | CHAR27 | CHAR28 | CHAR29 | CHAR30 | CHAR31 | ESCAPEDQUOTE | ESCAPEDDOUBLEQUOTE | . )*? QUOTE;
-WHITESPACE : ' ' -> skip ;
+ESCAPEDQUOTE : '\\\'' ;
+ESCAPEDDOUBLEQUOTE : '\\"' ;
+QUOTE : '\'' ;
+DOUBLEQUOTE : '"' ;
+STRING : QUOTEDSTRING | DOUBLEQUOTEDSTRING ;
+QUOTEDSTRING : QUOTE ( NULLCHAR | CHAR1 | CHAR2 | CHAR3 | CHAR4 | CHAR5 | CHAR6 | CHAR7 | CHAR8 | CHAR9 | CHAR10 | CHAR11 | CHAR12 | CHAR13 | CHAR14 | CHAR15 | CHAR16 | CHAR17 | CHAR18 | CHAR19 | CHAR20 | CHAR21 | CHAR22 | CHAR23 | CHAR24 | CHAR25 | CHAR26 | CHAR27 | CHAR28 | CHAR29 | CHAR30 | CHAR31 | ESCAPEDQUOTE | ESCAPEDDOUBLEQUOTE | DOUBLEQUOTE | . )*? QUOTE;
+DOUBLEQUOTEDSTRING : DOUBLEQUOTE ( NULLCHAR | CHAR1 | CHAR2 | CHAR3 | CHAR4 | CHAR5 | CHAR6 | CHAR7 | CHAR8 | CHAR9 | CHAR10 | CHAR11 | CHAR12 | CHAR13 | CHAR14 | CHAR15 | CHAR16 | CHAR17 | CHAR18 | CHAR19 | CHAR20 | CHAR21 | CHAR22 | CHAR23 | CHAR24 | CHAR25 | CHAR26 | CHAR27 | CHAR28 | CHAR29 | CHAR30 | CHAR31 | ESCAPEDQUOTE | ESCAPEDDOUBLEQUOTE | QUOTE | . )*? DOUBLEQUOTE;
+WHITESPACE : ' ' -> skip;
+LINEFEED : '\n' -> skip;
