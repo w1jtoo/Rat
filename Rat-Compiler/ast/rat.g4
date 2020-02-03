@@ -2,8 +2,9 @@ grammar rat;
 /*
  * Parser Rules
  */
-code : (funcdef | typedef | extdef | expressions)*;
+code : (funcdef | typedef | extdef | expressions | ifblock)*;
 extdef : LET EXT ID LBRACE (funcdef)*? RBRACE;
+ifblock : IF expression ARROW (expression | LBRACE code RBRACE) (ELSE ARROW (expression | LBRACE code RBRACE))?;
 typedef : LET TYPEKW ID LBRACE tupledef RBRACE;
 funcdef : LET functype ID funcarg*? (ARROW type)? LBRACE code RBRACE;
 expressions : expression (EXPRSEPARATOR expression)*;
@@ -36,6 +37,8 @@ arg : ID (SET expression)? ;
 /*
  * Lexer Rules
  */
+IF : 'if' ;
+ELSE : 'else' ;
 WHERE : 'where' ;
 IN : 'in' ;
 IS : 'is' ;
