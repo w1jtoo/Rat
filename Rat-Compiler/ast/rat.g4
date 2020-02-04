@@ -10,6 +10,7 @@ funcdef : LET functype ID funcarg*? (ARROW type)? LBRACE code RBRACE;
 expressions : expression (EXPRSEPARATOR expression)*;
 expression : expression SEMICOLON
 | expression LPARENTHESIS (expression ( COMMA expression )*)? RPARENTHESIS
+| leftUnaryOperator expression
 | expression zeroLevelOperator expression
 | expression firstLevelOperator expression
 | expression secondLevelOperator expression
@@ -20,9 +21,12 @@ expression : expression SEMICOLON
 | expression MEMDERCALLOPERATOR ID
 | expression MEMDERCALLOPERATOR ID
 | LET ID (COLON type)? SET expression
-| expression (PLUSPLUS | MINUSMINUS)
+| LETG ID (COLON type)? SET expression
+| expression rightUnaryOperator
 | term ;
-zeroLevelOperator : PRODUCT | DIVIDE | AND;
+leftUnaryOperator : NOT | MINUS ;
+rightUnaryOperator : (ADD ADD) | (MINUS MINUS) ;
+zeroLevelOperator : PRODUCT | DIVIDE | AND | NOT;
 firstLevelOperator: ADD | MINUS | OR | XOR ;
 secondLevelOperator: IN | IS;
 thirdLevelOperator : EQUALS ;
@@ -50,12 +54,14 @@ ANY : 'Any' ;
 OPTIONAL : 'Optional' ;
 NIL : 'Nil' ;
 LET : 'let' ;
+LETG : 'LET' ;
 TYPEKW : 'type' ;
 EXT : 'ext' ;
 ENDEXT : 'endext' ;
 AND : 'and' ;
 ANDEQUALS : '&=' ;
 OR : 'or' ;
+NOT : 'not' ;
 OREQUALS : '|=' ;
 TRUE : 'true' ;
 FALSE : 'false' ;
@@ -72,7 +78,6 @@ ADDEQUALS : '+=' ;
 PLUSPLUS : '++' ;
 ADD : '+' ;
 MINUSEQUALS : '-=' ;
-MINUSMINUS : '--' ;
 MINUS : '-' ;
 PRODUCTEQUALS : '*=' ;
 PRODUCT : '*' ;

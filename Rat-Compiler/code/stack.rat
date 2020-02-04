@@ -24,7 +24,8 @@ let ext Stack
         self::head = self::next::value &
         self::count-- &
         self::next = self::next::next &
-        head        
+        head |
+        Nil       
     }
     
     let fn peek => Any
