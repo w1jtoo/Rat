@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Rat_Grammer</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Antlr4" Version="4.6.6" />
+      <PackageReference Include="Antlr4.CodeGenerator" Version="4.6.6" />
+      <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
+    </ItemGroup>
+
+</Project>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rat_Compiler
+namespace Rat_Grammer
 {
     class Program
     {
