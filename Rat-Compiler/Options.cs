@@ -4,8 +4,7 @@ namespace Rat_Compiler
 {
     public class Options
     {
-        // TODO
-        [Option('v', "verbose", Required = false, HelpText = "Write hint")]
-        public bool Verbose { get; set; }
+        [Option('f', "file_name", Required = false, HelpText = "File to compile.")]
+        public string  FileName { get; set; }
     }
 }
