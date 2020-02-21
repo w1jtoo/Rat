@@ -1,14 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
         <RootNamespace>Rat_Grammer</RootNamespace>
+        <LangVersion>8</LangVersion>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Antlr4" Version="4.6.6" />
-      <PackageReference Include="Antlr4.CodeGenerator" Version="4.6.6" />
-      <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
+      <Compile Remove="Properties\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Properties\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Properties\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Antlr4.Runtime.Standard" Version="4.7.2" />
     </ItemGroup>
 
 </Project>
