@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/wanadoo/programming/c#/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
+// Generated from /home/lord_faceless/RiderProjects/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -32,7 +32,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class ratParser : Parser {
+public partial class RatParser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -109,16 +109,16 @@ public partial class ratParser : Parser {
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static ratParser() {
+	static RatParser() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
 		}
 	}
 
-		public ratParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
+	public RatParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
 
-		public ratParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
+	public RatParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
 		: base(input, output, errorOutput)
 	{
 		Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
@@ -161,15 +161,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_code; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterCode(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitCode(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitCode(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -236,11 +236,11 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class ExtdefContext : ParserRuleContext {
-		public ITerminalNode LET() { return GetToken(ratParser.LET, 0); }
-		public ITerminalNode EXT() { return GetToken(ratParser.EXT, 0); }
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
-		public ITerminalNode LBRACE() { return GetToken(ratParser.LBRACE, 0); }
-		public ITerminalNode RBRACE() { return GetToken(ratParser.RBRACE, 0); }
+		public ITerminalNode LET() { return GetToken(RatParser.LET, 0); }
+		public ITerminalNode EXT() { return GetToken(RatParser.EXT, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
+		public ITerminalNode LBRACE() { return GetToken(RatParser.LBRACE, 0); }
+		public ITerminalNode RBRACE() { return GetToken(RatParser.RBRACE, 0); }
 		public FuncdefContext[] funcdef() {
 			return GetRuleContexts<FuncdefContext>();
 		}
@@ -253,15 +253,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_extdef; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterExtdef(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitExtdef(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitExtdef(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -309,20 +309,20 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class IfblockContext : ParserRuleContext {
-		public ITerminalNode IF() { return GetToken(ratParser.IF, 0); }
+		public ITerminalNode IF() { return GetToken(RatParser.IF, 0); }
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode[] ARROW() { return GetTokens(ratParser.ARROW); }
+		public ITerminalNode[] ARROW() { return GetTokens(RatParser.ARROW); }
 		public ITerminalNode ARROW(int i) {
-			return GetToken(ratParser.ARROW, i);
+			return GetToken(RatParser.ARROW, i);
 		}
-		public ITerminalNode[] LBRACE() { return GetTokens(ratParser.LBRACE); }
+		public ITerminalNode[] LBRACE() { return GetTokens(RatParser.LBRACE); }
 		public ITerminalNode LBRACE(int i) {
-			return GetToken(ratParser.LBRACE, i);
+			return GetToken(RatParser.LBRACE, i);
 		}
 		public CodeContext[] code() {
 			return GetRuleContexts<CodeContext>();
@@ -330,26 +330,26 @@ public partial class ratParser : Parser {
 		public CodeContext code(int i) {
 			return GetRuleContext<CodeContext>(i);
 		}
-		public ITerminalNode[] RBRACE() { return GetTokens(ratParser.RBRACE); }
+		public ITerminalNode[] RBRACE() { return GetTokens(RatParser.RBRACE); }
 		public ITerminalNode RBRACE(int i) {
-			return GetToken(ratParser.RBRACE, i);
+			return GetToken(RatParser.RBRACE, i);
 		}
-		public ITerminalNode ELSE() { return GetToken(ratParser.ELSE, 0); }
+		public ITerminalNode ELSE() { return GetToken(RatParser.ELSE, 0); }
 		public IfblockContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_ifblock; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterIfblock(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitIfblock(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIfblock(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -444,29 +444,29 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class TypedefContext : ParserRuleContext {
-		public ITerminalNode LET() { return GetToken(ratParser.LET, 0); }
-		public ITerminalNode TYPEKW() { return GetToken(ratParser.TYPEKW, 0); }
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
-		public ITerminalNode LBRACE() { return GetToken(ratParser.LBRACE, 0); }
+		public ITerminalNode LET() { return GetToken(RatParser.LET, 0); }
+		public ITerminalNode TYPEKW() { return GetToken(RatParser.TYPEKW, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
+		public ITerminalNode LBRACE() { return GetToken(RatParser.LBRACE, 0); }
 		public TupledefContext tupledef() {
 			return GetRuleContext<TupledefContext>(0);
 		}
-		public ITerminalNode RBRACE() { return GetToken(ratParser.RBRACE, 0); }
+		public ITerminalNode RBRACE() { return GetToken(RatParser.RBRACE, 0); }
 		public TypedefContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_typedef; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterTypedef(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitTypedef(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTypedef(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -499,23 +499,23 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class FuncdefContext : ParserRuleContext {
-		public ITerminalNode LET() { return GetToken(ratParser.LET, 0); }
+		public ITerminalNode LET() { return GetToken(RatParser.LET, 0); }
 		public FunctypeContext functype() {
 			return GetRuleContext<FunctypeContext>(0);
 		}
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
-		public ITerminalNode LBRACE() { return GetToken(ratParser.LBRACE, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
+		public ITerminalNode LBRACE() { return GetToken(RatParser.LBRACE, 0); }
 		public CodeContext code() {
 			return GetRuleContext<CodeContext>(0);
 		}
-		public ITerminalNode RBRACE() { return GetToken(ratParser.RBRACE, 0); }
+		public ITerminalNode RBRACE() { return GetToken(RatParser.RBRACE, 0); }
 		public FuncargContext[] funcarg() {
 			return GetRuleContexts<FuncargContext>();
 		}
 		public FuncargContext funcarg(int i) {
 			return GetRuleContext<FuncargContext>(i);
 		}
-		public ITerminalNode ARROW() { return GetToken(ratParser.ARROW, 0); }
+		public ITerminalNode ARROW() { return GetToken(RatParser.ARROW, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
@@ -525,15 +525,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_funcdef; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterFuncdef(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitFuncdef(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFuncdef(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -599,9 +599,9 @@ public partial class ratParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode[] EXPRSEPARATOR() { return GetTokens(ratParser.EXPRSEPARATOR); }
+		public ITerminalNode[] EXPRSEPARATOR() { return GetTokens(RatParser.EXPRSEPARATOR); }
 		public ITerminalNode EXPRSEPARATOR(int i) {
-			return GetToken(ratParser.EXPRSEPARATOR, i);
+			return GetToken(RatParser.EXPRSEPARATOR, i);
 		}
 		public ExpressionsContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -609,15 +609,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_expressions; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterExpressions(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitExpressions(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitExpressions(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -669,20 +669,20 @@ public partial class ratParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode LPARENTHESIS() { return GetToken(ratParser.LPARENTHESIS, 0); }
-		public ITerminalNode RPARENTHESIS() { return GetToken(ratParser.RPARENTHESIS, 0); }
-		public ITerminalNode[] COMMA() { return GetTokens(ratParser.COMMA); }
+		public ITerminalNode LPARENTHESIS() { return GetToken(RatParser.LPARENTHESIS, 0); }
+		public ITerminalNode RPARENTHESIS() { return GetToken(RatParser.RPARENTHESIS, 0); }
+		public ITerminalNode[] COMMA() { return GetTokens(RatParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(ratParser.COMMA, i);
+			return GetToken(RatParser.COMMA, i);
 		}
-		public ITerminalNode LET() { return GetToken(ratParser.LET, 0); }
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
-		public ITerminalNode SET() { return GetToken(ratParser.SET, 0); }
-		public ITerminalNode COLON() { return GetToken(ratParser.COLON, 0); }
+		public ITerminalNode LET() { return GetToken(RatParser.LET, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
+		public ITerminalNode SET() { return GetToken(RatParser.SET, 0); }
+		public ITerminalNode COLON() { return GetToken(RatParser.COLON, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
-		public ITerminalNode LETG() { return GetToken(ratParser.LETG, 0); }
+		public ITerminalNode LETG() { return GetToken(RatParser.LETG, 0); }
 		public TermContext term() {
 			return GetRuleContext<TermContext>(0);
 		}
@@ -701,8 +701,8 @@ public partial class ratParser : Parser {
 		public ForthLevelOpeatorContext forthLevelOpeator() {
 			return GetRuleContext<ForthLevelOpeatorContext>(0);
 		}
-		public ITerminalNode SEMICOLON() { return GetToken(ratParser.SEMICOLON, 0); }
-		public ITerminalNode MEMDERCALLOPERATOR() { return GetToken(ratParser.MEMDERCALLOPERATOR, 0); }
+		public ITerminalNode SEMICOLON() { return GetToken(RatParser.SEMICOLON, 0); }
+		public ITerminalNode MEMDERCALLOPERATOR() { return GetToken(RatParser.MEMDERCALLOPERATOR, 0); }
 		public RightUnaryOperatorContext rightUnaryOperator() {
 			return GetRuleContext<RightUnaryOperatorContext>(0);
 		}
@@ -712,15 +712,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_expression; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterExpression(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitExpression(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitExpression(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -986,23 +986,23 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class LeftUnaryOperatorContext : ParserRuleContext {
-		public ITerminalNode NOT() { return GetToken(ratParser.NOT, 0); }
-		public ITerminalNode MINUS() { return GetToken(ratParser.MINUS, 0); }
+		public ITerminalNode NOT() { return GetToken(RatParser.NOT, 0); }
+		public ITerminalNode MINUS() { return GetToken(RatParser.MINUS, 0); }
 		public LeftUnaryOperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_leftUnaryOperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterLeftUnaryOperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitLeftUnaryOperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitLeftUnaryOperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1039,13 +1039,13 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class RightUnaryOperatorContext : ParserRuleContext {
-		public ITerminalNode[] ADD() { return GetTokens(ratParser.ADD); }
+		public ITerminalNode[] ADD() { return GetTokens(RatParser.ADD); }
 		public ITerminalNode ADD(int i) {
-			return GetToken(ratParser.ADD, i);
+			return GetToken(RatParser.ADD, i);
 		}
-		public ITerminalNode[] MINUS() { return GetTokens(ratParser.MINUS); }
+		public ITerminalNode[] MINUS() { return GetTokens(RatParser.MINUS); }
 		public ITerminalNode MINUS(int i) {
-			return GetToken(ratParser.MINUS, i);
+			return GetToken(RatParser.MINUS, i);
 		}
 		public RightUnaryOperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1053,15 +1053,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_rightUnaryOperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterRightUnaryOperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitRightUnaryOperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRightUnaryOperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1109,25 +1109,25 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class ZeroLevelOperatorContext : ParserRuleContext {
-		public ITerminalNode PRODUCT() { return GetToken(ratParser.PRODUCT, 0); }
-		public ITerminalNode DIVIDE() { return GetToken(ratParser.DIVIDE, 0); }
-		public ITerminalNode AND() { return GetToken(ratParser.AND, 0); }
-		public ITerminalNode NOT() { return GetToken(ratParser.NOT, 0); }
+		public ITerminalNode PRODUCT() { return GetToken(RatParser.PRODUCT, 0); }
+		public ITerminalNode DIVIDE() { return GetToken(RatParser.DIVIDE, 0); }
+		public ITerminalNode AND() { return GetToken(RatParser.AND, 0); }
+		public ITerminalNode NOT() { return GetToken(RatParser.NOT, 0); }
 		public ZeroLevelOperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_zeroLevelOperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterZeroLevelOperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitZeroLevelOperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitZeroLevelOperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1164,25 +1164,25 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class FirstLevelOperatorContext : ParserRuleContext {
-		public ITerminalNode ADD() { return GetToken(ratParser.ADD, 0); }
-		public ITerminalNode MINUS() { return GetToken(ratParser.MINUS, 0); }
-		public ITerminalNode OR() { return GetToken(ratParser.OR, 0); }
-		public ITerminalNode XOR() { return GetToken(ratParser.XOR, 0); }
+		public ITerminalNode ADD() { return GetToken(RatParser.ADD, 0); }
+		public ITerminalNode MINUS() { return GetToken(RatParser.MINUS, 0); }
+		public ITerminalNode OR() { return GetToken(RatParser.OR, 0); }
+		public ITerminalNode XOR() { return GetToken(RatParser.XOR, 0); }
 		public FirstLevelOperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_firstLevelOperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterFirstLevelOperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitFirstLevelOperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFirstLevelOperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1219,23 +1219,23 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class SecondLevelOperatorContext : ParserRuleContext {
-		public ITerminalNode IN() { return GetToken(ratParser.IN, 0); }
-		public ITerminalNode IS() { return GetToken(ratParser.IS, 0); }
+		public ITerminalNode IN() { return GetToken(RatParser.IN, 0); }
+		public ITerminalNode IS() { return GetToken(RatParser.IS, 0); }
 		public SecondLevelOperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_secondLevelOperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterSecondLevelOperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitSecondLevelOperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSecondLevelOperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1272,22 +1272,22 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class ThirdLevelOperatorContext : ParserRuleContext {
-		public ITerminalNode EQUALS() { return GetToken(ratParser.EQUALS, 0); }
+		public ITerminalNode EQUALS() { return GetToken(RatParser.EQUALS, 0); }
 		public ThirdLevelOperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_thirdLevelOperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterThirdLevelOperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitThirdLevelOperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitThirdLevelOperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1315,29 +1315,29 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class ForthLevelOpeatorContext : ParserRuleContext {
-		public ITerminalNode SET() { return GetToken(ratParser.SET, 0); }
-		public ITerminalNode ADDEQUALS() { return GetToken(ratParser.ADDEQUALS, 0); }
-		public ITerminalNode MINUSEQUALS() { return GetToken(ratParser.MINUSEQUALS, 0); }
-		public ITerminalNode PRODUCTEQUALS() { return GetToken(ratParser.PRODUCTEQUALS, 0); }
-		public ITerminalNode DIVIDEEQUALS() { return GetToken(ratParser.DIVIDEEQUALS, 0); }
-		public ITerminalNode XOREQUALS() { return GetToken(ratParser.XOREQUALS, 0); }
-		public ITerminalNode ANDEQUALS() { return GetToken(ratParser.ANDEQUALS, 0); }
-		public ITerminalNode OREQUALS() { return GetToken(ratParser.OREQUALS, 0); }
+		public ITerminalNode SET() { return GetToken(RatParser.SET, 0); }
+		public ITerminalNode ADDEQUALS() { return GetToken(RatParser.ADDEQUALS, 0); }
+		public ITerminalNode MINUSEQUALS() { return GetToken(RatParser.MINUSEQUALS, 0); }
+		public ITerminalNode PRODUCTEQUALS() { return GetToken(RatParser.PRODUCTEQUALS, 0); }
+		public ITerminalNode DIVIDEEQUALS() { return GetToken(RatParser.DIVIDEEQUALS, 0); }
+		public ITerminalNode XOREQUALS() { return GetToken(RatParser.XOREQUALS, 0); }
+		public ITerminalNode ANDEQUALS() { return GetToken(RatParser.ANDEQUALS, 0); }
+		public ITerminalNode OREQUALS() { return GetToken(RatParser.OREQUALS, 0); }
 		public ForthLevelOpeatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_forthLevelOpeator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterForthLevelOpeator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitForthLevelOpeator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitForthLevelOpeator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1374,26 +1374,26 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class TermContext : ParserRuleContext {
-		public ITerminalNode STRING() { return GetToken(ratParser.STRING, 0); }
-		public ITerminalNode NUMBER() { return GetToken(ratParser.NUMBER, 0); }
-		public ITerminalNode TRUE() { return GetToken(ratParser.TRUE, 0); }
-		public ITerminalNode FALSE() { return GetToken(ratParser.FALSE, 0); }
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
+		public ITerminalNode STRING() { return GetToken(RatParser.STRING, 0); }
+		public ITerminalNode NUMBER() { return GetToken(RatParser.NUMBER, 0); }
+		public ITerminalNode TRUE() { return GetToken(RatParser.TRUE, 0); }
+		public ITerminalNode FALSE() { return GetToken(RatParser.FALSE, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
 		public TermContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_term; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterTerm(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitTerm(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTerm(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1430,24 +1430,24 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class FunctypeContext : ParserRuleContext {
-		public ITerminalNode FN() { return GetToken(ratParser.FN, 0); }
-		public ITerminalNode MUT() { return GetToken(ratParser.MUT, 0); }
-		public ITerminalNode PARALLEL() { return GetToken(ratParser.PARALLEL, 0); }
+		public ITerminalNode FN() { return GetToken(RatParser.FN, 0); }
+		public ITerminalNode MUT() { return GetToken(RatParser.MUT, 0); }
+		public ITerminalNode PARALLEL() { return GetToken(RatParser.PARALLEL, 0); }
 		public FunctypeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_functype; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterFunctype(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitFunctype(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFunctype(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1487,26 +1487,26 @@ public partial class ratParser : Parser {
 		public ArgContext arg() {
 			return GetRuleContext<ArgContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(ratParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(RatParser.COLON, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
-		public ITerminalNode MUT() { return GetToken(ratParser.MUT, 0); }
+		public ITerminalNode MUT() { return GetToken(RatParser.MUT, 0); }
 		public FuncargContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_funcarg; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterFuncarg(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitFuncarg(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFuncarg(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1546,21 +1546,21 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class TupledefContext : ParserRuleContext {
-		public ITerminalNode LPARENTHESIS() { return GetToken(ratParser.LPARENTHESIS, 0); }
+		public ITerminalNode LPARENTHESIS() { return GetToken(RatParser.LPARENTHESIS, 0); }
 		public ArgContext[] arg() {
 			return GetRuleContexts<ArgContext>();
 		}
 		public ArgContext arg(int i) {
 			return GetRuleContext<ArgContext>(i);
 		}
-		public ITerminalNode RPARENTHESIS() { return GetToken(ratParser.RPARENTHESIS, 0); }
-		public ITerminalNode WHERE() { return GetToken(ratParser.WHERE, 0); }
+		public ITerminalNode RPARENTHESIS() { return GetToken(RatParser.RPARENTHESIS, 0); }
+		public ITerminalNode WHERE() { return GetToken(RatParser.WHERE, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(ratParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(RatParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(ratParser.COMMA, i);
+			return GetToken(RatParser.COMMA, i);
 		}
 		public TupledefContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1568,15 +1568,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_tupledef; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterTupledef(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitTupledef(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTupledef(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1625,14 +1625,14 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class TypeContext : ParserRuleContext {
-		public ITerminalNode EXPRSEPARATOR() { return GetToken(ratParser.EXPRSEPARATOR, 0); }
+		public ITerminalNode EXPRSEPARATOR() { return GetToken(RatParser.EXPRSEPARATOR, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
-		public ITerminalNode NIL() { return GetToken(ratParser.NIL, 0); }
-		public ITerminalNode ANY() { return GetToken(ratParser.ANY, 0); }
-		public ITerminalNode OPTIONAL() { return GetToken(ratParser.OPTIONAL, 0); }
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
+		public ITerminalNode NIL() { return GetToken(RatParser.NIL, 0); }
+		public ITerminalNode ANY() { return GetToken(RatParser.ANY, 0); }
+		public ITerminalNode OPTIONAL() { return GetToken(RatParser.OPTIONAL, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
 		public TupletypeContext tupletype() {
 			return GetRuleContext<TupletypeContext>(0);
 		}
@@ -1642,15 +1642,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_type; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1725,17 +1725,17 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class TupletypeContext : ParserRuleContext {
-		public ITerminalNode LPARENTHESIS() { return GetToken(ratParser.LPARENTHESIS, 0); }
+		public ITerminalNode LPARENTHESIS() { return GetToken(RatParser.LPARENTHESIS, 0); }
 		public TypeContext[] type() {
 			return GetRuleContexts<TypeContext>();
 		}
 		public TypeContext type(int i) {
 			return GetRuleContext<TypeContext>(i);
 		}
-		public ITerminalNode RPARENTHESIS() { return GetToken(ratParser.RPARENTHESIS, 0); }
-		public ITerminalNode[] COMMA() { return GetTokens(ratParser.COMMA); }
+		public ITerminalNode RPARENTHESIS() { return GetToken(RatParser.RPARENTHESIS, 0); }
+		public ITerminalNode[] COMMA() { return GetTokens(RatParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(ratParser.COMMA, i);
+			return GetToken(RatParser.COMMA, i);
 		}
 		public TupletypeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1743,15 +1743,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_tupletype; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterTupletype(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitTupletype(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTupletype(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1798,8 +1798,8 @@ public partial class ratParser : Parser {
 	}
 
 	public partial class ArgContext : ParserRuleContext {
-		public ITerminalNode ID() { return GetToken(ratParser.ID, 0); }
-		public ITerminalNode SET() { return GetToken(ratParser.SET, 0); }
+		public ITerminalNode ID() { return GetToken(RatParser.ID, 0); }
+		public ITerminalNode SET() { return GetToken(RatParser.SET, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
@@ -1809,15 +1809,15 @@ public partial class ratParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_arg; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.EnterArg(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IratListener typedListener = listener as IratListener;
+			IRatListener typedListener = listener as IRatListener;
 			if (typedListener != null) typedListener.ExitArg(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IratVisitor<TResult> typedVisitor = visitor as IratVisitor<TResult>;
+			IRatVisitor<TResult> typedVisitor = visitor as IRatVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitArg(this);
 			else return visitor.VisitChildren(this);
 		}

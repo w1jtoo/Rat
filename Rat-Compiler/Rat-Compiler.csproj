@@ -2,15 +2,21 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <RootNamespace>Rat_Compiler</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
       <PackageReference Include="CommandLineParser" Version="2.7.82" />
       <PackageReference Include="GrEmit" Version="3.2.2" />
       <PackageReference Include="Lokad.ILPack" Version="0.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="../Rat-Grammer/Rat-Grammer.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Include="test.rat" />
     </ItemGroup>
 
 </Project>

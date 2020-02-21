@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/wanadoo/programming/c#/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
+// Generated from /home/lord_faceless/RiderProjects/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -27,265 +27,265 @@ using IToken = Antlr4.Runtime.IToken;
 using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 
 /// <summary>
-/// This class provides an empty implementation of <see cref="IratListener"/>,
+/// This class provides an empty implementation of <see cref="IRatListener"/>,
 /// which can be extended to create a listener which only needs to handle a subset
 /// of the available methods.
 /// </summary>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class ratBaseListener : IratListener {
+public partial class RatBaseListener : IRatListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.code"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.code"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCode([NotNull] ratParser.CodeContext context) { }
+	public virtual void EnterCode([NotNull] RatParser.CodeContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.code"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.code"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCode([NotNull] ratParser.CodeContext context) { }
+	public virtual void ExitCode([NotNull] RatParser.CodeContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.extdef"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.extdef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExtdef([NotNull] ratParser.ExtdefContext context) { }
+	public virtual void EnterExtdef([NotNull] RatParser.ExtdefContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.extdef"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.extdef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExtdef([NotNull] ratParser.ExtdefContext context) { }
+	public virtual void ExitExtdef([NotNull] RatParser.ExtdefContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.ifblock"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.ifblock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterIfblock([NotNull] ratParser.IfblockContext context) { }
+	public virtual void EnterIfblock([NotNull] RatParser.IfblockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.ifblock"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.ifblock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitIfblock([NotNull] ratParser.IfblockContext context) { }
+	public virtual void ExitIfblock([NotNull] RatParser.IfblockContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.typedef"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.typedef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterTypedef([NotNull] ratParser.TypedefContext context) { }
+	public virtual void EnterTypedef([NotNull] RatParser.TypedefContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.typedef"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.typedef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitTypedef([NotNull] ratParser.TypedefContext context) { }
+	public virtual void ExitTypedef([NotNull] RatParser.TypedefContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.funcdef"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.funcdef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterFuncdef([NotNull] ratParser.FuncdefContext context) { }
+	public virtual void EnterFuncdef([NotNull] RatParser.FuncdefContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.funcdef"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.funcdef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitFuncdef([NotNull] ratParser.FuncdefContext context) { }
+	public virtual void ExitFuncdef([NotNull] RatParser.FuncdefContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.expressions"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExpressions([NotNull] ratParser.ExpressionsContext context) { }
+	public virtual void EnterExpressions([NotNull] RatParser.ExpressionsContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.expressions"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExpressions([NotNull] ratParser.ExpressionsContext context) { }
+	public virtual void ExitExpressions([NotNull] RatParser.ExpressionsContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.expression"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExpression([NotNull] ratParser.ExpressionContext context) { }
+	public virtual void EnterExpression([NotNull] RatParser.ExpressionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.expression"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExpression([NotNull] ratParser.ExpressionContext context) { }
+	public virtual void ExitExpression([NotNull] RatParser.ExpressionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.leftUnaryOperator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.leftUnaryOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterLeftUnaryOperator([NotNull] ratParser.LeftUnaryOperatorContext context) { }
+	public virtual void EnterLeftUnaryOperator([NotNull] RatParser.LeftUnaryOperatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.leftUnaryOperator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.leftUnaryOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitLeftUnaryOperator([NotNull] ratParser.LeftUnaryOperatorContext context) { }
+	public virtual void ExitLeftUnaryOperator([NotNull] RatParser.LeftUnaryOperatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.rightUnaryOperator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.rightUnaryOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterRightUnaryOperator([NotNull] ratParser.RightUnaryOperatorContext context) { }
+	public virtual void EnterRightUnaryOperator([NotNull] RatParser.RightUnaryOperatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.rightUnaryOperator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.rightUnaryOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitRightUnaryOperator([NotNull] ratParser.RightUnaryOperatorContext context) { }
+	public virtual void ExitRightUnaryOperator([NotNull] RatParser.RightUnaryOperatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.zeroLevelOperator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.zeroLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterZeroLevelOperator([NotNull] ratParser.ZeroLevelOperatorContext context) { }
+	public virtual void EnterZeroLevelOperator([NotNull] RatParser.ZeroLevelOperatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.zeroLevelOperator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.zeroLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitZeroLevelOperator([NotNull] ratParser.ZeroLevelOperatorContext context) { }
+	public virtual void ExitZeroLevelOperator([NotNull] RatParser.ZeroLevelOperatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.firstLevelOperator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.firstLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterFirstLevelOperator([NotNull] ratParser.FirstLevelOperatorContext context) { }
+	public virtual void EnterFirstLevelOperator([NotNull] RatParser.FirstLevelOperatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.firstLevelOperator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.firstLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitFirstLevelOperator([NotNull] ratParser.FirstLevelOperatorContext context) { }
+	public virtual void ExitFirstLevelOperator([NotNull] RatParser.FirstLevelOperatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.secondLevelOperator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.secondLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSecondLevelOperator([NotNull] ratParser.SecondLevelOperatorContext context) { }
+	public virtual void EnterSecondLevelOperator([NotNull] RatParser.SecondLevelOperatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.secondLevelOperator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.secondLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSecondLevelOperator([NotNull] ratParser.SecondLevelOperatorContext context) { }
+	public virtual void ExitSecondLevelOperator([NotNull] RatParser.SecondLevelOperatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.thirdLevelOperator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.thirdLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterThirdLevelOperator([NotNull] ratParser.ThirdLevelOperatorContext context) { }
+	public virtual void EnterThirdLevelOperator([NotNull] RatParser.ThirdLevelOperatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.thirdLevelOperator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.thirdLevelOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitThirdLevelOperator([NotNull] ratParser.ThirdLevelOperatorContext context) { }
+	public virtual void ExitThirdLevelOperator([NotNull] RatParser.ThirdLevelOperatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.forthLevelOpeator"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.forthLevelOpeator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterForthLevelOpeator([NotNull] ratParser.ForthLevelOpeatorContext context) { }
+	public virtual void EnterForthLevelOpeator([NotNull] RatParser.ForthLevelOpeatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.forthLevelOpeator"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.forthLevelOpeator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitForthLevelOpeator([NotNull] ratParser.ForthLevelOpeatorContext context) { }
+	public virtual void ExitForthLevelOpeator([NotNull] RatParser.ForthLevelOpeatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.term"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.term"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterTerm([NotNull] ratParser.TermContext context) { }
+	public virtual void EnterTerm([NotNull] RatParser.TermContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.term"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.term"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitTerm([NotNull] ratParser.TermContext context) { }
+	public virtual void ExitTerm([NotNull] RatParser.TermContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.functype"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.functype"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterFunctype([NotNull] ratParser.FunctypeContext context) { }
+	public virtual void EnterFunctype([NotNull] RatParser.FunctypeContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.functype"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.functype"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitFunctype([NotNull] ratParser.FunctypeContext context) { }
+	public virtual void ExitFunctype([NotNull] RatParser.FunctypeContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.funcarg"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.funcarg"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterFuncarg([NotNull] ratParser.FuncargContext context) { }
+	public virtual void EnterFuncarg([NotNull] RatParser.FuncargContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.funcarg"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.funcarg"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitFuncarg([NotNull] ratParser.FuncargContext context) { }
+	public virtual void ExitFuncarg([NotNull] RatParser.FuncargContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.tupledef"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.tupledef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterTupledef([NotNull] ratParser.TupledefContext context) { }
+	public virtual void EnterTupledef([NotNull] RatParser.TupledefContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.tupledef"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.tupledef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitTupledef([NotNull] ratParser.TupledefContext context) { }
+	public virtual void ExitTupledef([NotNull] RatParser.TupledefContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.type"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.type"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterType([NotNull] ratParser.TypeContext context) { }
+	public virtual void EnterType([NotNull] RatParser.TypeContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.type"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.type"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitType([NotNull] ratParser.TypeContext context) { }
+	public virtual void ExitType([NotNull] RatParser.TypeContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.tupletype"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.tupletype"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterTupletype([NotNull] ratParser.TupletypeContext context) { }
+	public virtual void EnterTupletype([NotNull] RatParser.TupletypeContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.tupletype"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.tupletype"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitTupletype([NotNull] ratParser.TupletypeContext context) { }
+	public virtual void ExitTupletype([NotNull] RatParser.TupletypeContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ratParser.arg"/>.
+	/// Enter a parse tree produced by <see cref="RatParser.arg"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterArg([NotNull] ratParser.ArgContext context) { }
+	public virtual void EnterArg([NotNull] RatParser.ArgContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ratParser.arg"/>.
+	/// Exit a parse tree produced by <see cref="RatParser.arg"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitArg([NotNull] ratParser.ArgContext context) { }
+	public virtual void ExitArg([NotNull] RatParser.ArgContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

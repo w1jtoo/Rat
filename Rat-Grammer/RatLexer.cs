@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/wanadoo/programming/c#/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
+// Generated from /home/lord_faceless/RiderProjects/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -29,7 +29,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class ratLexer : Lexer {
+public partial class RatLexer : Lexer {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -72,10 +72,10 @@ public partial class ratLexer : Lexer {
 	};
 
 
-	public ratLexer(ICharStream input)
+	public RatLexer(ICharStream input)
 	: this(input, Console.Out, Console.Error) { }
 
-	public ratLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
+	public RatLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
 	: base(input, output, errorOutput)
 	{
 		Interpreter = new LexerATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
@@ -130,7 +130,7 @@ public partial class ratLexer : Lexer {
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static ratLexer() {
+	static RatLexer() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);

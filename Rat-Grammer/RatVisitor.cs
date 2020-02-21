@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/wanadoo/programming/c#/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
+// Generated from /home/lord_faceless/RiderProjects/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -25,136 +25,136 @@ using IToken = Antlr4.Runtime.IToken;
 
 /// <summary>
 /// This interface defines a complete generic visitor for a parse tree produced
-/// by <see cref="ratParser"/>.
+/// by <see cref="RatParser"/>.
 /// </summary>
 /// <typeparam name="Result">The return type of the visit operation.</typeparam>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public interface IratVisitor<Result> : IParseTreeVisitor<Result> {
+public interface IRatVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.code"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.code"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitCode([NotNull] ratParser.CodeContext context);
+	Result VisitCode([NotNull] RatParser.CodeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.extdef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.extdef"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitExtdef([NotNull] ratParser.ExtdefContext context);
+	Result VisitExtdef([NotNull] RatParser.ExtdefContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.ifblock"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.ifblock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitIfblock([NotNull] ratParser.IfblockContext context);
+	Result VisitIfblock([NotNull] RatParser.IfblockContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.typedef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.typedef"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitTypedef([NotNull] ratParser.TypedefContext context);
+	Result VisitTypedef([NotNull] RatParser.TypedefContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.funcdef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.funcdef"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitFuncdef([NotNull] ratParser.FuncdefContext context);
+	Result VisitFuncdef([NotNull] RatParser.FuncdefContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.expressions"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitExpressions([NotNull] ratParser.ExpressionsContext context);
+	Result VisitExpressions([NotNull] RatParser.ExpressionsContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.expression"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitExpression([NotNull] ratParser.ExpressionContext context);
+	Result VisitExpression([NotNull] RatParser.ExpressionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.leftUnaryOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.leftUnaryOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitLeftUnaryOperator([NotNull] ratParser.LeftUnaryOperatorContext context);
+	Result VisitLeftUnaryOperator([NotNull] RatParser.LeftUnaryOperatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.rightUnaryOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.rightUnaryOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitRightUnaryOperator([NotNull] ratParser.RightUnaryOperatorContext context);
+	Result VisitRightUnaryOperator([NotNull] RatParser.RightUnaryOperatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.zeroLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.zeroLevelOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitZeroLevelOperator([NotNull] ratParser.ZeroLevelOperatorContext context);
+	Result VisitZeroLevelOperator([NotNull] RatParser.ZeroLevelOperatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.firstLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.firstLevelOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitFirstLevelOperator([NotNull] ratParser.FirstLevelOperatorContext context);
+	Result VisitFirstLevelOperator([NotNull] RatParser.FirstLevelOperatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.secondLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.secondLevelOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitSecondLevelOperator([NotNull] ratParser.SecondLevelOperatorContext context);
+	Result VisitSecondLevelOperator([NotNull] RatParser.SecondLevelOperatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.thirdLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.thirdLevelOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitThirdLevelOperator([NotNull] ratParser.ThirdLevelOperatorContext context);
+	Result VisitThirdLevelOperator([NotNull] RatParser.ThirdLevelOperatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.forthLevelOpeator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.forthLevelOpeator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitForthLevelOpeator([NotNull] ratParser.ForthLevelOpeatorContext context);
+	Result VisitForthLevelOpeator([NotNull] RatParser.ForthLevelOpeatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.term"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.term"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitTerm([NotNull] ratParser.TermContext context);
+	Result VisitTerm([NotNull] RatParser.TermContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.functype"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.functype"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitFunctype([NotNull] ratParser.FunctypeContext context);
+	Result VisitFunctype([NotNull] RatParser.FunctypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.funcarg"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.funcarg"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitFuncarg([NotNull] ratParser.FuncargContext context);
+	Result VisitFuncarg([NotNull] RatParser.FuncargContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.tupledef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.tupledef"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitTupledef([NotNull] ratParser.TupledefContext context);
+	Result VisitTupledef([NotNull] RatParser.TupledefContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.type"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.type"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitType([NotNull] ratParser.TypeContext context);
+	Result VisitType([NotNull] RatParser.TypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.tupletype"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.tupletype"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitTupletype([NotNull] ratParser.TupletypeContext context);
+	Result VisitTupletype([NotNull] RatParser.TupletypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.arg"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.arg"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitArg([NotNull] ratParser.ArgContext context);
+	Result VisitArg([NotNull] RatParser.ArgContext context);
 }

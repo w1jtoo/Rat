@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Diagnostics.SymbolStore;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
 using CommandLine;
-using GrEmit;
-using Lokad.ILPack;
 
 namespace Rat_Compiler
 {
@@ -14,10 +7,11 @@ namespace Rat_Compiler
     {
         static void Main(string[] args)
         {
-            Parser.Default
-                .ParseArguments<Options>(args)
-                .WithParsed<Options>(
-                    o => { Console.WriteLine(""); });
+            // Parser.Default
+            //     .ParseArguments<Options>(args)
+            //     .WithParsed<Options>(
+            //         o => { Console.WriteLine(""); });
+            Compiler.Compile("test.rat");
         }
     }
 }

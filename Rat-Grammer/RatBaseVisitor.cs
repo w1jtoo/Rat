@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/wanadoo/programming/c#/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
+// Generated from /home/lord_faceless/RiderProjects/Rat/Rat-Grammer/Antlr/rat.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -19,22 +19,23 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
+using System.Linq;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 using IToken = Antlr4.Runtime.IToken;
 using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 
 /// <summary>
-/// This class provides an empty implementation of <see cref="IratVisitor{Result}"/>,
+/// This class provides an empty implementation of <see cref="IRatVisitor{Result}"/>,
 /// which can be extended to create a visitor which only needs to handle a subset
 /// of the available methods.
 /// </summary>
 /// <typeparam name="Result">The return type of the visit operation.</typeparam>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, IratVisitor<Result> {
+public partial class RatBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, IRatVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.code"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.code"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -42,9 +43,12 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitCode([NotNull] ratParser.CodeContext context) { return VisitChildren(context); }
+	public virtual Result VisitCode([NotNull] RatParser.CodeContext context)
+	{
+		return VisitChildren(context);
+	}
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.extdef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.extdef"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -52,9 +56,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitExtdef([NotNull] ratParser.ExtdefContext context) { return VisitChildren(context); }
+	public virtual Result VisitExtdef([NotNull] RatParser.ExtdefContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.ifblock"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.ifblock"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -62,9 +66,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitIfblock([NotNull] ratParser.IfblockContext context) { return VisitChildren(context); }
+	public virtual Result VisitIfblock([NotNull] RatParser.IfblockContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.typedef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.typedef"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -72,9 +76,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTypedef([NotNull] ratParser.TypedefContext context) { return VisitChildren(context); }
+	public virtual Result VisitTypedef([NotNull] RatParser.TypedefContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.funcdef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.funcdef"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -82,9 +86,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFuncdef([NotNull] ratParser.FuncdefContext context) { return VisitChildren(context); }
+	public virtual Result VisitFuncdef([NotNull] RatParser.FuncdefContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.expressions"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -92,9 +96,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitExpressions([NotNull] ratParser.ExpressionsContext context) { return VisitChildren(context); }
+	public virtual Result VisitExpressions([NotNull] RatParser.ExpressionsContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.expression"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -102,9 +106,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitExpression([NotNull] ratParser.ExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitExpression([NotNull] RatParser.ExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.leftUnaryOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.leftUnaryOperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -112,9 +116,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitLeftUnaryOperator([NotNull] ratParser.LeftUnaryOperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitLeftUnaryOperator([NotNull] RatParser.LeftUnaryOperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.rightUnaryOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.rightUnaryOperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -122,9 +126,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRightUnaryOperator([NotNull] ratParser.RightUnaryOperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitRightUnaryOperator([NotNull] RatParser.RightUnaryOperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.zeroLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.zeroLevelOperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -132,9 +136,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitZeroLevelOperator([NotNull] ratParser.ZeroLevelOperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitZeroLevelOperator([NotNull] RatParser.ZeroLevelOperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.firstLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.firstLevelOperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -142,9 +146,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFirstLevelOperator([NotNull] ratParser.FirstLevelOperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitFirstLevelOperator([NotNull] RatParser.FirstLevelOperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.secondLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.secondLevelOperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -152,9 +156,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSecondLevelOperator([NotNull] ratParser.SecondLevelOperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitSecondLevelOperator([NotNull] RatParser.SecondLevelOperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.thirdLevelOperator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.thirdLevelOperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -162,9 +166,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitThirdLevelOperator([NotNull] ratParser.ThirdLevelOperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitThirdLevelOperator([NotNull] RatParser.ThirdLevelOperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.forthLevelOpeator"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.forthLevelOpeator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -172,9 +176,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitForthLevelOpeator([NotNull] ratParser.ForthLevelOpeatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitForthLevelOpeator([NotNull] RatParser.ForthLevelOpeatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.term"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.term"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -182,9 +186,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTerm([NotNull] ratParser.TermContext context) { return VisitChildren(context); }
+	public virtual Result VisitTerm([NotNull] RatParser.TermContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.functype"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.functype"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -192,9 +196,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFunctype([NotNull] ratParser.FunctypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitFunctype([NotNull] RatParser.FunctypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.funcarg"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.funcarg"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -202,9 +206,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFuncarg([NotNull] ratParser.FuncargContext context) { return VisitChildren(context); }
+	public virtual Result VisitFuncarg([NotNull] RatParser.FuncargContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.tupledef"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.tupledef"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -212,9 +216,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTupledef([NotNull] ratParser.TupledefContext context) { return VisitChildren(context); }
+	public virtual Result VisitTupledef([NotNull] RatParser.TupledefContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.type"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.type"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -222,9 +226,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitType([NotNull] ratParser.TypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitType([NotNull] RatParser.TypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.tupletype"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.tupletype"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -232,9 +236,9 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTupletype([NotNull] ratParser.TupletypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitTupletype([NotNull] RatParser.TupletypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ratParser.arg"/>.
+	/// Visit a parse tree produced by <see cref="RatParser.arg"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -242,5 +246,5 @@ public partial class ratBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, 
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitArg([NotNull] ratParser.ArgContext context) { return VisitChildren(context); }
+	public virtual Result VisitArg([NotNull] RatParser.ArgContext context) { return VisitChildren(context); }
 }
