@@ -13,7 +13,7 @@
 
 ## Special Types
 
-`Nil, Any, Optional`
+`Nil, Any, Optional, Error`
 
 ## Args
 
@@ -36,7 +36,7 @@ match(<expr>):
 
 ```python 
 let type <typename>:
-    ((<fields>[: <type>])+) where <field[i]> {in <{enum,collection}>} {or, and, setoperators (v, ^, |, ...)} <logical expr> 
+    ((<fields>[: <type>])+) where <field[i]> {in <{enum,collection}>} {or, and, setoperators (v, ^, |, ...)} <logical expr>
  ```
 
 ## Extension
@@ -52,3 +52,7 @@ let ext <typename>:
 let {fn, parallel} <name> <arguments>* [=> <out_types>+]:
     <func1> {&, |} <func2> {&, |} <func3>
 ```
+
+## Core
+
+Core: basic types; special types; operators:  &, | ;  macros? ; pub ; definitions: type, funcs, trait
