@@ -7,7 +7,7 @@ Main fature is chaining methods with | and & operatiors. For example:
 ```Rat
 let div a, b = if b != 0 a / b else Err
 
-print & (toString & (div | 0) (...))
+print (toString & (div | 0) (...))
 ```
 
 Same rust example code:
@@ -47,14 +47,14 @@ To functuins:
 - | - __TODO description__
 - & - __TODO description__
   
-Extention block:
+Extern block:
 
 ```Rat
-Extention DotnetMath:
+Extern DotnetMath:
     Math.Cos
     Console.Abs
 
-Extention DotnetMath:
+Extern DotnetMath:
     Console.Writeline
     Console.Readley
 ```
