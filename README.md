@@ -1,58 +1,60 @@
 # Rat
 
-* No overloads
-* No Inheritance
+Rat is a high-level functional programming language with compilation to Microsoft Intermediate Language (MSIL). 
 
-## Instantiation
+Main fature is chaining methods with | and & operatiors. For example:
 
-`<type>::new <args>*`
+```Rat
+let div a, b = if b != 0 a / b else Err
 
-## Basic Types
-
-`int, string, bool, tuple, void, float, functions(may be)`
-
-## Special Types
-
-`Nil, Any, Optional, Error`
-
-## Args
-
-* Separated by space `' '`
-* If Argument may contain spaces it is better to enclose it parentheses
-
-## Operators
-
-`+, -, *, /, %, <<, >>, ^, &(and), |(or), not, is, in, All, =, ==, :: (no dots), match`
-
-## Match
-
-```python
-match(<expr>):
-    [<case> => <operators>+]*
-    _ => <default>
+print & (toString & (div | 0) (...))
 ```
 
-## Type Definition
+Same rust example code:
 
-```python 
-let type <typename>:
-    ((<fields>[: <type>])+) where <field[i]> {in <{enum,collection}>} {or, and, setoperators (v, ^, |, ...)} <logical expr>
- ```
-
-## Extension
-
-```python
-let ext <typename>:
-    <Function>
- ```
-
-## Functions
-
-```python
-let {fn, parallel} <name> <arguments>* [=> <out_types>+]:
-    <func1> {&, |} <func2> {&, |} <func3>
+```Rust
+fn div(a: f32, b: f32) -> Result<f32> {
+    match b {
+        0 => Err(),
+        _ => a / b
+    }
+fn main() {
+    println!("{}", div(...).or_else(0));
+    }
+}
 ```
 
-## Core
+## Rat 0.1 features
 
-Core: basic types; special types; operators:  &, | ;  macros? ; pub ; definitions: type, funcs, trait
+Features are needed to bootstrapping.
+
+### Fucntion
+
+```Rat
+let foo a, b = a + b
+```
+
+### Operations
+
+To numerical types:
+
+- binary: _+, *, /, %_
+- unary: _-_
+- ternary: _if_ __condition__ __then_branch__ _else_ __else_branch__
+
+To functuins:
+
+- | - __TODO description__
+- & - __TODO description__
+  
+Extention block:
+
+```Rat
+Extention DotnetMath:
+    Math.Cos
+    Console.Abs
+
+Extention DotnetMath:
+    Console.Writeline
+    Console.Readley
+```
