@@ -1,17 +1,36 @@
-using System;
 using System.IO;
 using Antlr4.Runtime;
+using log4net;
 
 namespace Rat_Compiler
 {
-    static class Compiler
+    public class Compiler : ICompiler
     {
-        public static void Compile(String path)
+        private readonly ITreeWalker walker;
+        private readonly ILog logger;
+        public Compiler(ILog logger, ITreeWalker walker)
         {
-            using (var stream = new StreamReader(path))
+            this.logger = logger;
+            this.walker = walker;
+        }
+        public void Compile(string fileName)
+        {
+            var path = Path.Join(Directory.GetCurrentDirectory(), fileName);
+            if (! File.Exists(path))
             {
-                var antlr = new AntlrInputStream(); 
+                logger.Fatal($"Can't find file: {path}");
             }
-        }   
+            else
+            {
+                using var fs = new StreamReader(path);
+                
+                var antlr = new AntlrInputStream(fs);
+                var lexer = new ratLexer(antlr);
+                var ts = new CommonTokenStream(lexer);
+                var parser = new ratParser(ts);
+                
+                walker.Walk(parser);
+            }
+        }
     }
 }
