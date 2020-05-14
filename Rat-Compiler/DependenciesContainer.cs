@@ -1,4 +1,3 @@
-using System;
 using Autofac;
 using log4net;
 using Rat_Compiler.Infrastructure;

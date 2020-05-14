@@ -20,8 +20,7 @@ namespace Rat_Compiler
 
         public void Compile()
         {
-            var path = Path.Join(Directory.GetCurrentDirectory(), projectData.GetProjectEntryPoint);
-
+            var path = Path.Combine(Directory.GetCurrentDirectory(), projectData.GetEntryPointFileName);
             if (!File.Exists(path))
             {
                 logger.Fatal($"Can't find file: {path}");
@@ -30,7 +29,7 @@ namespace Rat_Compiler
             {
                 using var fs = new StreamReader(path);
                 compiler.Compile(fs);
-                // compiler.ModuleBuilder.S
+                compiler.AssemblyBuilder.Save(projectData.GetEntryPointFileName);
             }
         }
 
