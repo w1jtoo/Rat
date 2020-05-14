@@ -17,7 +17,7 @@ namespace Rat_Compiler.Compiler
                 .ToDictionary(el => el.GetExpressionType(), v => v);
         }
 
-        public void Walk(ratParser parser)
+        public void Walk(RatParser parser)
         {
             foreach (var expr in parser.code().expressions())
             {

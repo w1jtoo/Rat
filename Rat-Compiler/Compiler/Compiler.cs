@@ -31,7 +31,7 @@ namespace Rat_Compiler.Compiler
             InitEntryPoint();
 
             var antlr = new AntlrInputStream(streamReader);
-            var lexer = new ratLexer(antlr);
+            var lexer = new RatLexer(antlr);
             var ts = new CommonTokenStream(lexer);
             var parser = new ratParser(ts);
 
