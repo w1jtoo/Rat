@@ -1,9 +1,10 @@
 ﻿using Autofac;
 using CommandLine;
+using Rat_Compiler.Infrastructure;
 
 namespace Rat_Compiler
 {
-    internal class EntryPoint
+    public class EntryPoint
     {
         static void Main(string[] args)
         {
@@ -12,9 +13,11 @@ namespace Rat_Compiler
                 .WithParsed<Options>(
                     o =>
                     {
-                        using var container = DependenciesContainer.Create().Build();
-                        var compiler = container.Resolve<ICompiler>();
-                        compiler.Compile(o.FileName);
+                        var data = new ProjectData("f");
+                        using var container = DependenciesContainer.Create(data).Build();
+                        
+                        var rat = container.Resolve<IRat>();
+                        rat.Compile();
                     });
         }
     }

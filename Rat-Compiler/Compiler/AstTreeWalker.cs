@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Rat_Compiler.Compiler.ExpressionHandlers;
 
-namespace Rat_Compiler
+namespace Rat_Compiler.Compiler
 {
     public class AstTreeWalker : ITreeWalker
     {

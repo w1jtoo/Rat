@@ -1,6 +1,6 @@
 using System;
 
-namespace Rat_Compiler
+namespace Rat_Compiler.Compiler.ExpressionHandlers
 {
     public interface IExpressionHandler
     {
