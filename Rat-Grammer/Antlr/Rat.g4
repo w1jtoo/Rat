@@ -5,6 +5,7 @@ grammar Rat;
 tokens { INDENT, DEDENT } 
 
 @lexer::members {
+    using System.Text.RegularExpressions;
   // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
   private System.Collections.Generic.List<IToken> tokens = new System.Collections.Generic.List<IToken>();
   // The stack that keeps track of the indentation level.
@@ -12,8 +13,8 @@ tokens { INDENT, DEDENT }
   // The amount of opened braces, brackets and parenthesis.
   private int opened = 0;
   public const int EOF = -1;
-  Regex NotLfRegex = new Regex("[^\r\n\f]+");
-  Regex LfRegex = new Regex("[\r\n\f]+");
+  System.Text.RegularExpressions.Regex NotLfRegex = new System.Text.RegularExpressions.Regex("[^\r\n\f]+");
+  System.Text.RegularExpressions.Regex LfRegex = new System.Text.RegularExpressions.Regex("[\r\n\f]+");
 
   public override void Emit(IToken t) {
       base.Emit(t);
