@@ -71,6 +71,18 @@ public partial class RatBaseListener : IRatListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitStatement([NotNull] RatParser.StatementContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="RatParser.externstmt"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExternstmt([NotNull] RatParser.ExternstmtContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="RatParser.externstmt"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExternstmt([NotNull] RatParser.ExternstmtContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -238,6 +250,18 @@ public partial class RatBaseListener : IRatListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitIfstmt([NotNull] RatParser.IfstmtContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="RatParser.line"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLine([NotNull] RatParser.LineContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="RatParser.line"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLine([NotNull] RatParser.LineContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="RatParser.bool"/>.
 	/// <para>The default implementation does nothing.</para>

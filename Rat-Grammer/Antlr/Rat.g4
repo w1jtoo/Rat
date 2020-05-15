@@ -93,10 +93,13 @@ tokens { INDENT, DEDENT }
     return CharIndex == 0 && Line == 1;
   }
 }
+
 code : statement+;
 
 statementblock : NEWLINE INDENT statement+ DEDENT;
-statement : ((funcdef | ifstmt | funccall) SEMICOLON? NEWLINE) | NEWLINE;
+statement : ((funcdef | ifstmt | funccall | externstmt) SEMICOLON? NEWLINE) | NEWLINE;
+
+externstmt : EXTERN string COLON NEWLINE INDENT line* DEDENT;
 
 expressions : expression (EXPRSEPARATOR expression)*? ;
 expression : funccall 
@@ -126,10 +129,11 @@ exprargs : expressions (COMMA expressions)*? ;
 ifexpr : IF LPARENTHESIS expression RPARENTHESIS expression ELSE expression;
 ifstmt : IF LPARENTHESIS expression RPARENTHESIS statementblock ELSE statementblock;
 
-
+line : string NEWLINE? ;
 /*
  * Lexer Rules
  */
+EXTERN : 'extern' ;
 COMPAREOPERATOR : EQUALS | INEQUALS | GREATER | LESS |GREATEREQUAL | LESSEQUAL ;
 IF : 'if' ;
 ELSE : 'else' ;

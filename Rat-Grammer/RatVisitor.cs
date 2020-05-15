@@ -50,6 +50,12 @@ public interface IRatVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitStatement([NotNull] RatParser.StatementContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="RatParser.externstmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExternstmt([NotNull] RatParser.ExternstmtContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -133,6 +139,12 @@ public interface IRatVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitIfstmt([NotNull] RatParser.IfstmtContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="RatParser.line"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLine([NotNull] RatParser.LineContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="RatParser.bool"/>.
 	/// </summary>

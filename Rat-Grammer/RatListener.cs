@@ -61,6 +61,16 @@ public interface IRatListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitStatement([NotNull] RatParser.StatementContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="RatParser.externstmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExternstmt([NotNull] RatParser.ExternstmtContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="RatParser.externstmt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExternstmt([NotNull] RatParser.ExternstmtContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="RatParser.expressions"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -200,6 +210,16 @@ public interface IRatListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitIfstmt([NotNull] RatParser.IfstmtContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="RatParser.line"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLine([NotNull] RatParser.LineContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="RatParser.line"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLine([NotNull] RatParser.LineContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="RatParser.bool"/>.
 	/// </summary>
