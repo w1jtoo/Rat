@@ -29,7 +29,7 @@ namespace Rat_Compiler
             {
                 using var fs = new StreamReader(path);
                 compiler.Compile(fs);
-                compiler.AssemblyBuilder.Save(projectData.GetEntryPointFileName);
+                compiler.SaveAssembly(projectData.GetEntryPointFileName);
             }
         }
 

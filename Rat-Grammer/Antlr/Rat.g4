@@ -237,7 +237,7 @@ NEWLINE
      if (opened > 0 || (nextnext != -1 && (next == '\r' || next == '\n' || next == '\f' || next == '#'))) {
        // If we're inside a list or on a blank line, ignore all indents, 
        // dedents and line breaks.
-       skip();
+       Skip();
      }
      else {
        Emit(CommonToken(NEWLINE, newLine));
@@ -253,7 +253,7 @@ NEWLINE
        }
        else {
          // Possibly emit more than 1 DEDENT token.
-         while(!indents.Count > 0 && indents.Peek() > indent) {
+         while(!(indents.Count > 0) && indents.Peek() > indent) {
            this.Emit(CreateDedent());
            indents.Pop();
          }

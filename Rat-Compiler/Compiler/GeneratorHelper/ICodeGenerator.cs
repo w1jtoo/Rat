@@ -1,4 +1,4 @@
-namespace Rat_Compiler.Compiler
+namespace Rat_Compiler.Compiler.GeneratorHelper
 {
     public interface ICodeGenerator
     {

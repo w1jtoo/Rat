@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Rat_Compiler.Compiler.ExpressionHandlers;
+using Rat_Compiler.Compiler.GeneratorHelper;
 
 namespace Rat_Compiler.Compiler
 {
@@ -19,7 +20,7 @@ namespace Rat_Compiler.Compiler
 
         public void Walk(RatParser parser)
         {
-            foreach (var expr in parser.code().expressions())
+            foreach (var expr in parser.code().statement())
             {
                 typeToHandler[expr.GetType()].Handle(generator);
             }

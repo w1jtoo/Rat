@@ -6,6 +6,6 @@ namespace Rat_Compiler.Compiler
     public interface ICompiler
     {
         void Compile(StreamReader streamReader);
-        public AssemblyBuilder AssemblyBuilder { get; set; }
+        public void SaveAssembly(string name);
     }
 }
