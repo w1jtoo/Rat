@@ -6,27 +6,28 @@ tokens { INDENT, DEDENT }
 
 @lexer::members {
   // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
-  private System.Collections.Generic.LinkedList<Token> tokens = new System.Collections.Generic.LinkedList<>();
+  private System.Collections.Generic.List<IToken> tokens = new System.Collections.Generic.List<IToken>();
   // The stack that keeps track of the indentation level.
-  private System.Collections.Generic.Stack<Integer> indents = new System.Collections.Generic.Stack<>();
+  private System.Collections.Generic.Stack<int> indents = new System.Collections.Generic.Stack<int>();
   // The amount of opened braces, brackets and parenthesis.
   private int opened = 0;
-  // The most recently produced token.
-  private Token lastToken = null;
-  
-  public void Emit(Token t) {
-    SetToken(t);
-    tokens.Offer(t);
+  public const int EOF = -1;
+  System.Text.RegularExpressions.Regex NotLfRegex = new System.Text.RegularExpressions.Regex("[^\r\n\f]+");
+  System.Text.RegularExpressions.Regex LfRegex = new System.Text.RegularExpressions.Regex("[\r\n\f]+");
+
+  public override void Emit(IToken t) {
+      base.Emit(t);
+      tokens.Add(t);
   }
 
-
-  public Token nextToken() {
+  public override IToken NextToken() 
+  {
     // Check if the end-of-file is ahead and there are still some DEDENTS expected.
-    if (_input.LA(1) == EOF && this.indents.Count > 0) {
+    if (HitEOF && this.indents.Count > 0) {
       // Remove any trailing EOF tokens from our buffer.
       for (int i = tokens.Count - 1; i >= 0; i--) {
-        if (tokens[i].GetType() == EOF) {
-          tokens.Remove(i);
+        if (tokens[i].Type == -1) {
+          tokens.RemoveAt(i);
         }
       }
 
@@ -40,29 +41,35 @@ tokens { INDENT, DEDENT }
       }
 
       // Put the EOF back on the token stream.
-      this.Emit(CommonToken(RatParser.EOF, "<EOF>"));
+      this.Emit(CommonToken(EOF, "<EOF>"));
     }
 
-    Token next = NextToken();
+    IToken next = NextToken();
 
-    if (next.GetChannel() == Token.DEFAULT_CHANNEL) {
+    if (next.Channel == DefaultTokenChannel) {
       // Keep track of the last token on the default channel.
-      this.lastToken = next;
+      base.Emit(next);
     }
 
-    return tokens.Length == 0 ? next : tokens.Poll();
+	if (tokens.Count != 0)
+	{
+      next = tokens[0];
+      tokens.RemoveAt(0);
+	}
+
+	return next;
   }
 
-  private Token createDedent() {
+  private IToken CreateDedent() {
     CommonToken dedent = CommonToken(RatParser.DEDENT, "");
-    dedent.SetLine(this.lastToken.GetLine());
+    dedent.Line = Token.Line;
     return dedent;
   }
 
   private CommonToken CommonToken(int type, string text) {
-    int stop = this.GetCharIndex() - 1;
+    int stop = this.CharIndex - 1;
     int start = text.Length == 0 ? stop : stop - text.Length + 1;
-    return new CommonToken(this._tokenFactorySourcePair, type, DEFAULT_TOKEN_CHANNEL, start, stop);
+    return new CommonToken(Tuple.Create((ITokenSource)this, ((ITokenSource)this).InputStream), type, DefaultTokenChannel, start, stop);
   }
   
   static int GetIndentationCount(string spaces) {
@@ -75,21 +82,24 @@ tokens { INDENT, DEDENT }
         default:
           // A normal space char.
           count++;
+          break;
       }
     }
 
     return count;
   }
 
-  boolean AtStartOfInput() {
-    return GetCharPositionInLine() == 0 && GetLine() == 1;
+  bool AtStartOfInput() {
+    return CharIndex == 0 && Line == 1;
   }
 }
 
 code : statement+;
 
 statementblock : NEWLINE INDENT statement+ DEDENT;
-statement : ((funcdef | ifstmt | funccall) SEMICOLON? NEWLINE) | NEWLINE;
+statement : ((funcdef | ifstmt | funccall | externstmt) SEMICOLON? NEWLINE) | NEWLINE;
+
+externstmt : EXTERN string COLON NEWLINE INDENT line* DEDENT;
 
 expressions : expression (EXPRSEPARATOR expression)*? ;
 expression : funccall 
@@ -119,10 +129,11 @@ exprargs : expressions (COMMA expressions)*? ;
 ifexpr : IF LPARENTHESIS expression RPARENTHESIS expression ELSE expression;
 ifstmt : IF LPARENTHESIS expression RPARENTHESIS statementblock ELSE statementblock;
 
-
+line : string NEWLINE? ;
 /*
  * Lexer Rules
  */
+EXTERN : 'extern' ;
 COMPAREOPERATOR : EQUALS | INEQUALS | GREATER | LESS |GREATEREQUAL | LESSEQUAL ;
 IF : 'if' ;
 ELSE : 'else' ;
@@ -223,21 +234,21 @@ DOUBLEQUOTEDSTRING : DOUBLEQUOTE ( NULLCHAR | CHAR1 | CHAR2 | CHAR3 | CHAR4 | CH
 WHITESPACE : ' ' -> skip;
 
 NEWLINE
- : ( {atStartOfInput()}?   WHITESPACE
+ : ( {AtStartOfInput()}?   WHITESPACE
    | ( '\r'? '\n' | '\r' | '\f' ) WHITESPACE?
    )
    {
-     String newLine = GetText().ReplaceAll("[^\r\n\f]+", "");
-     String spaces = GetText().ReplaceAll("[\r\n\f]+", "");
-	 
+     String newLine = NotLfRegex.Replace(Text,"");
+     String spaces = LfRegex.Replace(Text,"");
+     
      // Strip newlines inside open clauses except if we are near EOF. We keep NEWLINEs near EOF to
      // satisfy the final newline needed by the single_put rule used by the REPL.
-     int next = _input.LA(1);
-     int nextnext = _input.LA(2);
+     int next = InputStream.LA(1);
+     int nextnext = InputStream.LA(2);
      if (opened > 0 || (nextnext != -1 && (next == '\r' || next == '\n' || next == '\f' || next == '#'))) {
        // If we're inside a list or on a blank line, ignore all indents, 
        // dedents and line breaks.
-       skip();
+       Skip();
      }
      else {
        Emit(CommonToken(NEWLINE, newLine));
@@ -253,7 +264,7 @@ NEWLINE
        }
        else {
          // Possibly emit more than 1 DEDENT token.
-         while(!indents.Count > 0 && indents.Peek() > indent) {
+         while(indents.Count > 0 && indents.Peek() > indent) {
            this.Emit(CreateDedent());
            indents.Pop();
          }
