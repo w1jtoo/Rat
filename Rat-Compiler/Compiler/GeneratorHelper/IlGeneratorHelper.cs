@@ -1,5 +1,4 @@
 using System;
-using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Reflection.Emit;
 using GrEmit;
@@ -106,11 +105,11 @@ namespace Rat_Compiler.Compiler.GeneratorHelper
                 mapMethod.DefineParameter(0, ParameterAttributes.In, "f"); // NECESSARY TO DEBUG 
                 {
                     using var il = new GroboIL(mapMethod);
-                    
+
                     il.Newobj(ResultTypeConstructor);
                     var localBuilder = il.DeclareLocal(ResultTypeBuilder, "tempResult");
                     var mapped = new GroboIL.Local(localBuilder, "mapped");
-                    
+
                     il.Ldarg(0);
                     il.Ldfld(GetValueField);
                     il.Newobj(typeof(Func<object, object>).GetConstructor(new[] {typeof(Func<object, object>)}));
@@ -118,9 +117,10 @@ namespace Rat_Compiler.Compiler.GeneratorHelper
 
                     il.Ldloc(mapped);
                     il.Newobj(ResultTypeConstructor); // new Result(mapped)
-                    
+
                     il.Ret(); // return 
                 }
             }
         }
     }
+}

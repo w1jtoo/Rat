@@ -1,5 +1,4 @@
 using System.IO;
-using System.Reflection.Emit;
 
 namespace Rat_Compiler.Compiler
 {
