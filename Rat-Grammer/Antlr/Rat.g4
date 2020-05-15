@@ -5,7 +5,6 @@ grammar Rat;
 tokens { INDENT, DEDENT } 
 
 @lexer::members {
-    using System.Text.RegularExpressions;
   // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
   private System.Collections.Generic.List<IToken> tokens = new System.Collections.Generic.List<IToken>();
   // The stack that keeps track of the indentation level.
