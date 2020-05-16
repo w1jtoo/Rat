@@ -69,7 +69,7 @@ tokens { INDENT, DEDENT }
   private CommonToken CommonToken(int type, string text) {
     int stop = this.CharIndex - 1;
     int start = text.Length == 0 ? stop : stop - text.Length + 1;
-    return new CommonToken(Tuple.Create((ITokenSource)this, ((ITokenSource)this).InputStream), type, DefaultTokenChannel, start, stop);
+    return new CommonToken(new Antlr4.Runtime.Sharpen.Tuple<ITokenSource, ICharStream>((ITokenSource)this, ((ITokenSource)this).InputStream), type, DefaultTokenChannel, start, stop);
   }
   
   static int GetIndentationCount(string spaces) {
@@ -99,35 +99,38 @@ code : statement+;
 statementblock : NEWLINE INDENT statement+ DEDENT;
 statement : ((funcdef | ifstmt | funccall | externstmt) SEMICOLON? NEWLINE) | NEWLINE;
 
-externstmt : EXTERN string COLON NEWLINE INDENT line* DEDENT;
+externstmt : EXTERN filename=string COLON NEWLINE INDENT lines DEDENT;
+lines : line* ;
 
-expressions : expression (EXPRSEPARATOR expression)*? ;
+expressions : expr=expression 
+    | left=expressions separator=EXPRSEPARATORAND right=expressions 
+    | left=expressions separator=EXPRSEPARATOROR right=expressions ;
+
 expression : funccall 
     | ifexpr 
     | expression COMPAREOPERATOR expression |
     leftoperator expression |
-    expression zerooperator expression |
+//    expression zerooperator expression |
     expression firstoperator expression |
     expression secondoperator expression |
     expression thirdoperator expression
-    | string | bool | range | number | ID;
+    | string | bool | range | number | id;
 
 leftoperator : NOT | MINUS;
-zerooperator : SET;
+//zerooperator : SET;
 firstoperator : ADD | OR | MINUS ;
 secondoperator : PRODUCT | DIVIDE | AND ;
 thirdoperator : IN | IS ;
 
 
-funcdef : LET ID LPARENTHESIS (funcargs)? RPARENTHESIS SET expressions ;
-funcargs : funcarg (COMMA funcarg)*?;
-funcarg : ID ;
+funcdef : LET id LPARENTHESIS (funcarg (COMMA funcarg)*?)? RPARENTHESIS SET expressions ;
+funcarg : id ;//COLON type=id ;
 
-funccall : ID LPARENTHESIS exprargs RPARENTHESIS;
+funccall : id LPARENTHESIS exprargs RPARENTHESIS;
 exprargs : expressions (COMMA expressions)*? ;
 
 ifexpr : IF LPARENTHESIS expression RPARENTHESIS expression ELSE expression;
-ifstmt : IF LPARENTHESIS expression RPARENTHESIS statementblock ELSE statementblock;
+ifstmt : IF LPARENTHESIS expression RPARENTHESIS truth=statementblock ELSE lie=statementblock;
 
 line : string NEWLINE? ;
 /*
@@ -160,8 +163,10 @@ OREQUALS : '|=' ;
 TWODOTS : '..' ;
 COLON : ':' ;
 SEMICOLON : ';';
-EXPRSEPARATOR : '&' | '|';
-ID : [A-Za-z_] [A-Za-z_0-9]* ;
+EXPRSEPARATORAND : '&';
+EXPRSEPARATOROR : '|';
+id : ID_STRING ;
+ID_STRING : [A-Za-z_] [A-Za-z_0-9]* ;
 COMMA : ',' ;
 XOREQUALS : '^=' ;
 XOR : 'xor' | '^' ;

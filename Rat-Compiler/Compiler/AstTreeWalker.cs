@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
+using Antlr4.Runtime;
+using Rat_Compiler.Compiler.CompiledContexts;
 using Rat_Compiler.Compiler.ExpressionHandlers;
 using Rat_Compiler.Compiler.GeneratorHelper;
 
 namespace Rat_Compiler.Compiler
 {
-    public class AstTreeWalker : ITreeWalker
+    public class AstTreeWalker : ITreeWalker, IContextHandler
     {
         private readonly Dictionary<Type, IExpressionHandler> typeToHandler;
         private readonly ICodeGenerator generator;
@@ -22,8 +25,13 @@ namespace Rat_Compiler.Compiler
         {
             foreach (var expr in parser.code().statement())
             {
-                typeToHandler[expr.GetType()].Handle(generator);
+                Handle(expr);
             }
+        }
+
+        public ICompiledContext Handle(ParserRuleContext context)
+        {
+            return typeToHandler[context.GetType()].Handle(this, context);
         }
     }
 }
