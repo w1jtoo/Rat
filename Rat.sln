@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Compiler", "Rat-Compile
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FD8A6023-F0C1-4B71-B4A4-201CCF3040ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Grammer", "Rat-Grammer\Rat-Grammer.csproj", "{555AB07E-F913-45CD-8FB1-AF8CC329C614}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat-Grammar", "Rat-Grammar\Rat-Grammar.csproj", "{555AB07E-F913-45CD-8FB1-AF8CC329C614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrammerTests", "GrammerTests\GrammerTests.csproj", "{4FE8B3CA-1DCC-4559-9838-FA168F438426}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrammarTests", "GrammarTests\GrammarTests.csproj", "{4FE8B3CA-1DCC-4559-9838-FA168F438426}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
