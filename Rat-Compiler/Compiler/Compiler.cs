@@ -3,6 +3,7 @@ using Antlr4.Runtime;
 using log4net;
 using Rat_Compiler.Compiler.GeneratorHelper;
 using Rat_Compiler.Infrastructure;
+using RatLangGrammar;
 
 namespace Rat_Compiler.Compiler
 {
