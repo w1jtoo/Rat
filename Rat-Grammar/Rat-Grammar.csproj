@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>Rat_Grammer</RootNamespace>
+        <RootNamespace>Rat_Grammar</RootNamespace>
         <LangVersion>8</LangVersion>
         <TargetFramework>net472</TargetFramework>
     </PropertyGroup>

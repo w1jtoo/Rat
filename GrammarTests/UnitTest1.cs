@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace GrammerTests
+namespace GrammarTests
 {
     public class Tests
     {
