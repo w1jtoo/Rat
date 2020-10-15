@@ -1,8 +1,17 @@
 grammar Rat;
+
+options {
+  superClass=MultiChannelBaseParser;
+}
+
 /*
  * Parser Rules
  */
 tokens { INDENT, DEDENT } 
+
+@header { 
+using Rat_Grammar;
+}
 
 @lexer::members {
   // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
@@ -71,7 +80,7 @@ tokens { INDENT, DEDENT }
     int start = text.Length == 0 ? stop : stop - text.Length + 1;
     return new CommonToken(Tuple.Create((ITokenSource)this, ((ITokenSource)this).InputStream), type, DefaultTokenChannel, start, stop);
   }
-  
+
   static int GetIndentationCount(string spaces) {
     int count = 0;
     foreach(var ch in spaces.ToCharArray()) {
@@ -237,39 +246,39 @@ NEWLINE
  : ( {AtStartOfInput()}?   WHITESPACE
    | ( '\r'? '\n' | '\r' | '\f' ) WHITESPACE?
    )
-   {
-     String newLine = NotLfRegex.Replace(Text,"");
-     String spaces = LfRegex.Replace(Text,"");
-     
-     // Strip newlines inside open clauses except if we are near EOF. We keep NEWLINEs near EOF to
-     // satisfy the final newline needed by the single_put rule used by the REPL.
-     int next = InputStream.LA(1);
-     int nextnext = InputStream.LA(2);
-     if (opened > 0 || (nextnext != -1 && (next == '\r' || next == '\n' || next == '\f' || next == '#'))) {
-       // If we're inside a list or on a blank line, ignore all indents, 
-       // dedents and line breaks.
-       Skip();
-     }
-     else {
-       Emit(CommonToken(NEWLINE, newLine));
-       int indent = GetIndentationCount(spaces);
-       int previous = indents.Count == 0 ? 0 : indents.Peek();
-       if (indent == previous) {
-         // skip indents of the same size as the present indent-size
-         Skip();
-       }
-       else if (indent > previous) {
-         indents.Push(indent);
-         Emit(CommonToken(RatParser.INDENT, spaces));
-       }
-       else {
-         // Possibly emit more than 1 DEDENT token.
-         while(indents.Count > 0 && indents.Peek() > indent) {
-           this.Emit(CreateDedent());
-           indents.Pop();
-         }
-       }
-     }
-   }
+    {
+      String newLine = NotLfRegex.Replace(Text,"");
+      String spaces = LfRegex.Replace(Text,"");
+      
+      // Strip newlines inside open clauses except if we are near EOF. We keep NEWLINEs near EOF to
+      // satisfy the final newline needed by the single_put rule used by the REPL.
+      int next = InputStream.LA(1);
+      int nextnext = InputStream.LA(2);
+      if (opened > 0 || (nextnext != -1 && (next == '\r' || next == '\n' || next == '\f' || next == '#'))) {
+        // If we're inside a list or on a blank line, ignore all indents, 
+        // dedents and line breaks.
+        Skip();
+      }
+      else {
+        Emit(CommonToken(NEWLINE, newLine));
+        int indent = GetIndentationCount(spaces);
+        int previous = indents.Count == 0 ? 0 : indents.Peek();
+        if (indent == previous) {
+          // skip indents of the same size as the present indent-size
+          Skip();
+        }
+        else if (indent > previous) {
+          indents.Push(indent);
+          Emit(CommonToken(RatParser.INDENT, spaces));
+        }
+        else {
+          // Possibly emit more than 1 DEDENT token.
+          while(indents.Count > 0 && indents.Peek() > indent) {
+            this.Emit(CreateDedent());
+            indents.Pop();
+          }
+        }
+      }
+    }
  ;
 LINEFEED : '\n' -> skip;
